@@ -13,19 +13,19 @@ int main(int argc, char const *argv[])
     switch (intentos)
     {
     case 0:
-        cout << "No tiene mas intentos, adios..." << endl;
+        cout << "No tiene mas intentos, adios... 🫠" << endl;
         break;
     case 1:
-        cout << "Master Pro" << endl;
+        cout << "Master Pro 🤓" << endl;
         break;
     case 2:
-        cout << "Easy" << endl;
+        cout << "Easy 😇" << endl;
         break;
     case 3:
-        cout << "Noob" << endl;
+        cout << "Noob 🫥" << endl;
         break;
     default:
-        cout << "Me quieres ver la cara de... " << endl;
+        cout << "Me quieres ver la cara de... 🐷 " << endl;
         intentos = 3;
         break;
     }
