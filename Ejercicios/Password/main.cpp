@@ -10,6 +10,26 @@ int main(int argc, char const *argv[])
     string passwordString = "1234";
     string verificarString;
 
+    switch (intentos)
+    {
+    case 0:
+        cout << "No tiene mas intentos, adios..." << endl;
+        break;
+    case 1:
+        cout << "Master Pro" << endl;
+        break;
+    case 2:
+        cout << "Easy" << endl;
+        break;
+    case 3:
+        cout << "Noob" << endl;
+        break;
+    default:
+        cout << "Me quieres ver la cara de... " << endl;
+        intentos = 3;
+        break;
+    }
+
     cout << "Ingrese password para ingresar: " << endl;
     cin >> verificarString;
 
