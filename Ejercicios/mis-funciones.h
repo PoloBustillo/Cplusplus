@@ -5,13 +5,14 @@ using namespace std;
 /**
  * Funcion que regresa un entero.
  * La información se la pide al usuario.
- * @return int retries- intentos para verificar password
+ * @return int retries - intentos para verificar password
  */
 int askForRetries() // usar camelCase para nombrar funciones.
 {
     int tries; // intentos para verificar password
     // pide al usuario un datos
-    cout << "Cuanto intentos necesitas?: " << endl;
+    cout << "Cuantos intentos "
+         << "necesitas?: " << endl;
     // guarda el dato en la variable
     cin >> tries;
 
