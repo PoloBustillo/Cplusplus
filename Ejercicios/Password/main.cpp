@@ -10,24 +10,26 @@ int main(int argc, char const *argv[])
     string passwordString = "1234";
     string verificarString;
 
-    for (int i = 0; i < intentos; i++)
+    while (intentos > 0)
     {
-        cout << "Ingrese password para ingresar: " << endl;
+        cout << "Ingresa con la password: " << endl;
         cin >> verificarString;
-        for (int j = 0; j < 4; j++)
+        int auxiliar = 0;
+        while (auxiliar < 4)
         {
-            if (verificarString[j] != passwordString[j])
+            if (verificarString[auxiliar] != passwordString[auxiliar])
             {
                 cout << "Password incorrecta" << endl;
                 break;
             }
-            else if (j == 3)
+            else if (auxiliar == 3)
             {
                 cout << "Password correcta" << endl;
                 break;
             }
+            auxiliar++;
         }
+        intentos--;
     }
-
     return 0;
 }
