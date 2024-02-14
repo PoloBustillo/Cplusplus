@@ -15,14 +15,26 @@ int main(int argc, char const *argv[])
         cout << "Ingrese password para ingresar: " << endl;
         cin >> verificarString;
 
-        if (verificarString == passwordString)
+        int tamanio = 0;
+        do
         {
-            cout << "Password correcta, Bienvenido..." << endl;
-            break;
+            if (verificarString[tamanio] != passwordString[tamanio])
+            {
+                cout << "No son iguales en posicion : " << tamanio << endl;
+                break;
+            }
+            tamanio++;
+
+        } while (tamanio < 4);
+
+        if (tamanio == 4)
+        {
+            cout << tamanio << endl;
+            cout << "Password correcta" << endl;
         }
         else
         {
-            cout << "Password incorrecta, Intentos restantes: " << intentos - 1 << endl;
+            cout << "Password incorrecta" << endl;
         }
 
         intentos--;
