@@ -1,13 +1,14 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 int main()
 {
+    vector<variant<int, string>> array = {10, "Hola", 30};
 
-    string array[] = {"12", "3", "HOLA", "TODOS", "123", "23", "242"};
-    int tam = sizeof(array) / sizeof(array[0]);
-
+    cout << array.size() << endl;
+    int tam = array.size();
     // METODO DE ORDENAR: SELECTION SORT
     for (int indiceAOrd = 0; indiceAOrd < tam - 1; indiceAOrd++) // recorre
     {
@@ -20,14 +21,21 @@ int main()
             }
         }
         // SWAP
-        string temp = array[indiceAOrd];
+        auto temp = array[indiceAOrd];
         array[indiceAOrd] = array[minIdx];
         array[minIdx] = temp;
     }
 
-    for (int k = 0; k < tam; k++) // recorre
+    for (const variant<int, string> &e : array)
     {
-        cout << array[k] << " ";
+        if (const int *int_ptr = get_if<int>(&e))
+        {
+            cout << *int_ptr << " ";
+        }
+        else if (const string *str_ptr = get_if<string>(&e))
+        {
+            cout << *str_ptr << " ";
+        }
     }
     return 0;
 }
